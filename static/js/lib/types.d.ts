@@ -1,0 +1,85 @@
+import { Api } from "chessground/api";
+import { PgnReader } from "../../pgn-reader/lib";
+import { Field } from "../../pgn-reader/lib/types";
+import Mousetrap from "mousetrap-ts";
+import { Config } from "chessground/config";
+export declare type Base = {
+    userConfiguration?: PgnViewerConfiguration;
+    configuration?: PgnViewerConfiguration;
+    mypgn: PgnReader;
+    mousetrap: Mousetrap;
+    board: Api;
+    errorDiv?: any;
+    currentMove?: number;
+    boardConfig?: PgnBoardConfiguration;
+    t?: Function;
+};
+export declare type SupportedLocales = 'en' | 'de' | 'fr' | 'es' | 'cs' | 'da' | 'et' | 'fi' | 'hu' | 'is' | 'it' | 'nb' | 'nl' | 'pt' | 'ro' | 'sv';
+export declare type Layout = 'left' | 'right' | 'top' | 'bottom';
+export declare type Color = 'white' | 'black';
+export declare type ShortColor = 'w' | 'b';
+export declare type TimeAnnotation = {
+    class?: string;
+    colorClass?: string;
+};
+export declare type PgnBoardConfiguration = {
+    resizable?: boolean;
+    showCoords?: boolean;
+    coordsInner?: boolean;
+    coordsFactor?: number;
+    position?: string;
+    boardSize?: string;
+    width?: string;
+    drawable?: boolean;
+};
+export declare type PgnViewerMode = 'board' | 'view' | 'edit' | 'print';
+export declare type PgnViewerConfiguration = {
+    modalClicked?: (value: ("q" | "r" | "b" | "n")) => void;
+    modal?: any;
+    mode?: PgnViewerMode;
+    IDs?: {
+        [key in PgnViewerID]?: string;
+    };
+    pgn?: string;
+    theme?: string;
+    figurine?: string;
+    layout?: Layout;
+    resizable?: boolean;
+    orientation?: Color;
+    headers?: boolean;
+    timerTime?: number;
+    pieceStyle?: string;
+    notationLayout?: 'inline' | 'list' | 'allList';
+    timeAnnotation?: TimeAnnotation;
+    boardSize?: string;
+    movesWidth?: string;
+    movesHeight?: string;
+    width?: string;
+    startPlay?: number;
+    hideMovesBefore?: boolean;
+    showResult?: boolean;
+    colorMarker?: string;
+    showFen?: boolean;
+    manyGames?: boolean;
+    locale?: SupportedLocales;
+    position?: string;
+    i18n?: Function;
+    defaultI18n?: Function;
+    movable?: Config["movable"];
+    highlight?: Config["highlight"];
+    viewOnly?: Config["viewOnly"];
+    lazyLoad?: boolean;
+    showCoords?: boolean;
+    coordsInner?: boolean;
+    coordsFontSize?: string;
+    coordsFactor?: number;
+    coordinates?: boolean;
+    notation?: 'short' | 'long';
+};
+export declare type PgnViewerID = 'bottomHeaderId' | 'topHeaderId' | 'innerBoardId' | 'movesId' | 'buttonsId' | 'fenId' | 'colorMarkerId';
+export declare type PrimitiveMove = {
+    from: Field;
+    to: Field;
+    promotion?: 'q' | 'r' | 'b' | 'n';
+};
+//# sourceMappingURL=types.d.ts.map

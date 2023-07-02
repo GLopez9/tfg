@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+ 
+
+{% block content %}
+    <h2 class="file">Partida cargada: {{nombreArchivo}}</h2>
+    <h3>{{nombre_blancas}} (Blancas) vs {{nombre_negras}} (Negras) </h3>
+    <h3>Ganador: {{ganador}}</h3>
+
+    <div id="partida">{{partida}} </div>
+
+    <main id="cuerpo">
+
+        <div class="containerImagen">
+            <img class="imgGrafica" id="grafica" src="/static/img/grafica.png">
+            <pre> {{ graficaAnalizada }}</pre>
+        </div>
+        
+
+        
+        <div id="boardCargado" style="width: 600px"></div>
+        <script>
+            var partida = $( "#partida" ).text();
+            var pgn = partida;
+            var boardCargado = PGNV.pgnView('boardCargado', {pgn: pgn});
+        </script>
+        
+        
+        
+        <script type="text/javascript">
+            
+            document.getElementById("partida").style.display = "none";
+            
+
+        </script>
+    
+     
+    
+        
+        <script>
+            $(document).ready(function() {
+              $('form').on('submit', function(event) {
+                event.preventDefault(); // evita que el formulario se envíe y recargue la página
+                var mensaje = $('input[name=user_input').val(); //mensaje usuario
+                $.ajax({
+                  url: '/procesarMensaje',
+                  type: 'POST',
+                  data: { 'mensaje': mensaje },
+                  success: function(respuesta) {
+                    $('#cajaMensajes').append(respuesta); // agrega la respuesta del chatbot al historial de mensajes
+                    $('input[name=user_input]').val(''); // limpia el cuadro de texto
+                    if (respuesta.includes('De acuerdo veamos mejor jugada blancas')){
+                        window.location.href = '/jugada/mejorBlancas';
+                    }
+                    if (respuesta.includes('De acuerdo veamos mayor acierto blancas')){
+                        window.location.href = '/jugada/mejorBlancas';
+                    }
+                    if (respuesta.includes('De acuerdo veamos mejor jugada negras')){
+                        window.location.href = '/jugada/mejorNegras';
+                    }
+                    if (respuesta.includes('De acuerdo veamos mayor acierto negras')){
+                        window.location.href = '/jugada/mejorNegras';
+                    }
+                    if (respuesta.includes('De acuerdo veamos peor jugada blancas')){
+                        window.location.href = '/jugada/errorBlancas';
+                    }
+                    if (respuesta.includes('De acuerdo veamos peor jugada negras')){
+                        window.location.href = '/jugada/errorNegras';
+                    }
+                    if (respuesta.includes('De acuerdo veamos mayor error blancas')){
+                        window.location.href = '/jugada/errorBlancas';
+                    }
+                    if (respuesta.includes('De acuerdo veamos mayor fallo blancas')){
+                        window.location.href = '/jugada/errorBlancas';
+                    }
+                    if (respuesta.includes('De acuerdo veamos mayor error negras')){
+                        window.location.href = '/jugada/errorNegras';
+                    }
+                    if (respuesta.includes('De acuerdo veamos mayor fallo negras')){
+                        window.location.href = '/jugada/errorNegras';
+                    }
+                    if (respuesta.includes('De acuerdo veamos posibilidad mate blancas')){
+                        window.location.href = '/jugada/posibleMateBlancas';
+                    }
+                    if (respuesta.includes('De acuerdo veamos posibilidad mate negras')){
+                        window.location.href = '/jugada/posibleMateNegras';
+                    }
+                    if (respuesta.includes('De acuerdo veamos final')){
+                        window.location.href = '/jugada/final';
+                    }
+                    if (respuesta.includes('De acuerdo veamos mate')){
+                        window.location.href = '/jugada/final';
+                    }
+                    if (respuesta.includes('De acuerdo veamos inicio')){
+                        window.location.href = '/analizada';
+                    }
+                  }
+                });
+              });
+            });
+          </script>
+
+        <div id="cajaMensajes">
+            <p><strong>Chatbot</strong>: ¡Hola! ¿En qué puedo ayudarte?</p>
+        </div>
+        
+        <form id="input-form">
+            <input type="text" name="user_input" autocomplete="off" size="42">
+            <button type="submit">Enviar</button>
+        </form>
+
+    </main>
+    
+
+    
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+        <df-messenger
+        intent="Partida analizada"
+        chat-title="InformaciónChatBot"
+        agent-id="42ba4b3e-6c49-463c-b7e3-cea4b7383d3a"
+        language-code="es"
+        ></df-messenger>
+
+    {% endblock %}
+</html>

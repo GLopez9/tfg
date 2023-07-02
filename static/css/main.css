@@ -1,0 +1,314 @@
+body {
+    background-color: lightblue;
+    
+}
+  
+
+h1 {
+    color: navy;
+    margin-left: 20px;
+}
+h2 {
+    color: navy;
+    margin-bottom: 50;
+    margin-top: auto;
+    text-align: center;
+}
+
+h3 {
+    margin-bottom: 50;
+    margin-top: auto;
+    text-align: center;
+
+}
+
+h4 {
+    font-size: 25px;
+    margin-bottom: 0;
+    margin-top: 50px;
+    text-align: center;
+}
+
+
+label { 
+    display: block; 
+    width: 100px; 
+}
+
+.titulo{
+    vertical-align: top;
+    text-align: center;
+}
+
+#tablero1{
+    
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+
+#boardCargado{
+
+    margin-top: 2%;
+    margin-left: 25%;
+}
+
+#subidaArchivo{
+    display: flex;
+    justify-content: center;
+    margin-top:5%;
+    
+}
+
+#cajaMensajes{
+    
+    height: 600px;
+    width: 400px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 50px;
+    margin-left: 200px;
+}
+
+
+
+#input-form{
+
+    position: absolute;
+    right: 13%;
+    margin-top: 27%;
+    
+}
+
+#input-form button{
+
+    align-self: flex-end;
+    margin-top: 10px;
+}
+
+.home{
+
+}
+
+/* CSS */
+.home button {
+  background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-size: 16px;
+  justify-content:left;
+  padding:left;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.home button:hover {
+  background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
+}
+
+@media (min-width: 768px) {
+  .home button {
+    padding: 1rem 2rem;
+  }
+}
+
+/* CSS */
+.submit {
+  align-items: center;
+  appearance: button;
+  background-color: #0276FF;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  font-family: "RM Neue",sans-serif;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  padding: 10px 21px;
+  text-align: center;
+  text-transform: none;
+  transition: color .13s ease-in-out,background .13s ease-in-out,opacity .13s ease-in-out,box-shadow .13s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.submit:active {
+  background-color: #006AE8;
+}
+
+.submit:hover {
+  background-color: #1C84FF;
+}
+
+.lista{
+    appearance: none;
+    outline: 0;
+    border: 0;
+    margin-left: 3%;
+    margin-top: 20%;
+    background-color: #0276FF;
+    height: 20px;
+    width: 5%;
+    border-radius: .25em;
+    overflow: hidden;
+}
+
+
+  
+select {
+    /* Personalize */
+    flex: 1;
+   
+    color: #fff;
+    background-color: #0276FF;
+    cursor: pointer;
+}
+
+/* Custom Select wrapper */
+.select {
+    margin-left: 3%;
+    margin-top: 20%;
+    height: auto;
+    width: auto;
+    border-radius: 5px;
+}
+
+select:label{
+    color: #006AE8;
+}
+
+.form-inline{
+    margin-left: 3%;
+    margin-top: 12%;
+
+}
+
+.analizar{
+    margin-left: 3%;
+    margin-top: 20%;
+}
+
+.analizar button{
+    align-items: center;
+    appearance: button;
+    background-color: #0276FF;
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    flex-direction: row;
+    flex-shrink: 0;
+    font-family: "RM Neue",sans-serif;
+    font-size: 100%;
+    line-height: 1.15;
+    padding: 12px;
+    text-align: center;
+    text-transform: none;
+    transition: color .13s ease-in-out,background .13s ease-in-out,opacity .13s ease-in-out,box-shadow .13s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    
+}
+  
+.analizar button:active {
+    background-color: #006AE8;
+}
+  
+.analizar button:hover {
+    background-color: #1C84FF;
+}
+
+.btn-group{
+    margin-left: 2%;
+    margin-top: 10%;
+}
+.btn-group button {
+    margin-left: 3%;
+    margin-top: 10%;
+    appearance: button;
+    background-color: #0276FF;
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
+    box-sizing: border-box;
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    width: 80%; /* Set a width if needed */
+    display: block; /* Make the buttons appear below each other */
+}
+
+
+/* Add a background color on hover */
+.btn-group button:hover {
+    background-color: #1C84FF;
+}
+
+
+#cuerpo {
+    content: "";
+    /*display: table;*/
+    clear: both;
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    color: navy;
+    
+}
+
+.containerImagen{
+    position: absolute;
+    left: 2%;
+    margin-top: 3%;
+}
+
+.containerImagen img {
+    margin-right: 5%;
+    width: auto;
+    height: 400px;
+}
+
+.imgGrafica{
+    width: auto;
+    height: auto;
+}
+
+.informacionJugada{
+    position: absolute;
+    left: 27%;
+    margin-top: 5%;
+}
+
+#footer{
+
+    
+    position: absolute;
+    bottom: 0px;
+    font-family: arial, helvetica;
+    font-weight: bold ;
+    font-size: 11px;
+
+}
+
+
+

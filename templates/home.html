@@ -1,0 +1,44 @@
+
+{% extends 'base.html' %}
+
+ 
+
+{% block content %}
+
+    
+    
+    <div id="tablero1">
+        <div id="boardHome" style="width: 600px"></div>
+        <script>
+        var board = PGNV.pgnBoard('boardHome', {});
+        </script>    
+    </div>
+    
+
+    <div id="subidaArchivo">
+        <label for="file">Archivo PGN partida ajedrez</label>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="archivo" class="file">
+            <input type="submit" class="submit" value="Cargar">
+        </form>
+    </div>
+
+    
+    
+  
+    
+    <div id="chatBot">
+        <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+        <df-messenger
+        intent="WELCOME"
+        chat-title="InformaciónChatBot"
+        agent-id="42ba4b3e-6c49-463c-b7e3-cea4b7383d3a"
+        language-code="es"
+        expand="true"
+        ></df-messenger>
+    </div>
+    
+
+    {% endblock %}
+
+</html>
